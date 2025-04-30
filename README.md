@@ -15,6 +15,7 @@ Thanks for checking this out!
 1. Next.JS
 2. Next Auth - Authentication
 3. MongoDB - Database
+4. GSAP
 
 ## Credits
 
@@ -27,3 +28,9 @@ Thanks to a community of mentors, friends, and teachers - those who know me pers
 ### Mentors
 
 1. Joslyn Thomas | The Legacy Way Society
+
+### Inspirations
+
+Visuals
+
+1. Andy Gallego [behance](https://www.behance.net/gallery/186521193/Alkym-Game-Identity-UI-Art-Direction/modules/1054567185)

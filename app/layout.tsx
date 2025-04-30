@@ -3,10 +3,22 @@ import localFont from "next/font/local";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
+/**
+ * Fonts
+ */
+
+// Recoleta
 const recoletaBold = localFont({
     src: "./fonts/recoleta-bold.woff2",
     variable: "--font-recoleta-bold",
     weight: "700",
+});
+
+//Visuelt
+const visueltReg = localFont({
+    src: "./fonts/VisueltPro-Regular.woff2",
+    variable: "--font-visuelt-regular",
+    weight: "400",
 });
 
 const visueltMed = localFont({
@@ -15,6 +27,16 @@ const visueltMed = localFont({
     weight: "500",
 });
 
+// Rune
+const rune = localFont({
+    src: "./fonts/darune.otf",
+    variable: "--font-rune",
+    weight: "400",
+});
+
+/**
+ * Metadata
+ */
 export const metadata: Metadata = {
     title: "The Compendium",
     description:
@@ -29,7 +51,7 @@ export default function RootLayout({
     return (
         <html lang="en">
             <body
-                className={`${recoletaBold.variable} ${visueltMed.variable} antialiased bg-slate-100`}
+                className={`${recoletaBold.variable} ${visueltMed.variable} ${rune.variable} antialiased bg-slate-100`}
             >
                 {children}
             </body>

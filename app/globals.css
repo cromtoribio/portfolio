@@ -19,10 +19,26 @@ html {
     --color-foreground: var(--foreground);
     --font-sans: var(--font-geist-sans);
     --font-mono: var(--font-geist-mono);
+    --font-rune: var(--font-rune);
+    --font-recoletaBold: var(--font-recoleta-bold);
+    --font-visueltMed: var(--font-visuelt-medium);
+    --font-visueltReg: var(--font-visuelt-regular);
 }
 
 @utility primary-gradient {
     @apply bg-linear-to-b from-primary to-primary-900;
+}
+
+@utility rune {
+    @apply font-rune;
+}
+
+@utility visuelt-med {
+    @apply font-visueltMed;
+}
+
+@utility header-main {
+    @apply font-recoletaBold;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -37,7 +53,6 @@ body {
 }
 
 h1 {
-    font-family: var(--font-recoleta-bold);
     font-weight: bold;
     line-height: 110%;
 }
