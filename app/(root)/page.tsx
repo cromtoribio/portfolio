@@ -1,5 +1,10 @@
-import Image from "next/image";
+import Welcome from "@/components/Welcome";
 
 export default function Home() {
-    return <div>Chris's Portfolio</div>;
+    return (
+        <>
+            <Welcome />
+            {/* Rest of the homepage */}
+        </>
+    );
 }

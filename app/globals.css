@@ -1,5 +1,9 @@
 @import "tailwindcss";
 
+html {
+    font-size: 18px;
+}
+
 :root {
     --background: #ffffff;
     --foreground: #171717;
@@ -30,4 +34,10 @@
 
 body {
     font-family: Arial, Helvetica, sans-serif;
+}
+
+h1 {
+    font-family: var(--font-recoleta-bold);
+    font-weight: bold;
+    line-height: 110%;
 }
