@@ -14,27 +14,40 @@ const IntroFlow = ({ onClick }: Props) => {
     useGSAP(() => {
         const ctx = gsap.context(() => {
             const messages = [
-                "Hello there, friend! 🌹",
-                "It is a pleasure to see you here!",
-                "I’m Chris — the caretaker and curator of The Compendium!",
-                "This space is a living, breathing collection woven from my own journeys —",
-                "a place where stories of creativity, wonder, and world-building find their home.",
-                "Though the walls may shift and reshape with time,",
-                "many rooms are already waiting for you to explore ✨",
-                "Just let your curiosity lead the way!",
-                "Welcome to The Compendium! ❤️",
+                "Hey there, Dreamer ✨",
+                "I’m so glad you’re here 🙌🏽",
+                "I’m Chris — part guide, part tinkerer, full-time steward of this strange little world.",
+                "The Compendium is a world in motion —",
+                "realms woven from sparks of curiosity, design mischief, and world-shifting dreams.",
+                "These rooms hold pieces of my path so far —",
+                "and yet, there’s space for others to leave their mark...",
+                "...perhaps yours will echo here someday 👀",
+                "Until then, take what you need — and leave whatever you feel called to.",
+                "Welcome to The Compendium ❤️",
+                "Let’s wander a while 🙏🏽",
             ];
 
             const tl = gsap.timeline({ defaults: { ease: "none" } });
 
             // Fade in + rise up the bubble
-            tl.from("#intro-bubble", {
+            tl.from("#intro-container", {
                 opacity: 0,
                 width: 0,
-                y: 20,
-                duration: 0.5,
+                duration: 0.8,
                 ease: "expo.in",
-            });
+            })
+                .from("#sidewave-bitmoji", {
+                    x: 300,
+                    duration: 0.8,
+                    ease: "expo.in",
+                })
+                .from("#intro-bubble", {
+                    opacity: 0,
+                    width: 0,
+                    y: 20,
+                    duration: 0.5,
+                    ease: "expo.in",
+                });
 
             messages.forEach((msg, i) => {
                 tl.add(() => {
@@ -47,7 +60,7 @@ const IntroFlow = ({ onClick }: Props) => {
                     "#intro-text",
                     {
                         text: msg,
-                        duration: Math.max(msg.length / 30, 2),
+                        duration: 0.05 * msg.length,
                     },
                     "+=0.5"
                 );
@@ -60,16 +73,16 @@ const IntroFlow = ({ onClick }: Props) => {
         return () => ctx.revert();
     }, []);
 
-    const bubbleClass =
-        "bg-white/80 py-4 rounded-lg px-8 sm:mr-4 text-center w-[80%] mx-auto";
-
     return (
         <>
-            <div className="flex flex-col items-center justify-center max-sm:justify-end sm:max-w-[600px] text-black font-visueltMed w-full h-screen">
-                <div className="flex items-center justify-center max-sm:flex-col max-sm:justify-items-start max-sm:items-end w-full sm:bg-stone-950 sm:pl-8 py-10 rounded-sm">
+            <div className="flex flex-col items-center justify-center max-sm:justify-end md:max-w-[500px] text-stone-50 font-visueltMed w-full h-screen">
+                <div
+                    id="intro-container"
+                    className=" overflow-hidden flex items-center justify-center max-sm:flex-col max-sm:justify-items-start max-sm:items-end w-full sm:bg-stone-950 rounded-sm"
+                >
                     <div
                         id="intro-bubble"
-                        className={bubbleClass}
+                        className=" py-4 rounded-lg px-8 sm:mr-4 text-center w-[80%] mx-auto leading-relaxed"
                     >
                         <p id="intro-text"></p>
                     </div>
@@ -77,7 +90,8 @@ const IntroFlow = ({ onClick }: Props) => {
                         src="/images/bitmoji/side_wave.png"
                         width={500}
                         height={500}
-                        alt="hero"
+                        alt="bitmoji saying hello"
+                        id="sidewave-bitmoji"
                         className="max-w-[210px]"
                     />
                 </div>

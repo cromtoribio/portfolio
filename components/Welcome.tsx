@@ -73,7 +73,7 @@ const Welcome = ({ onClick }: Props) => {
     });
 
     return (
-        <div className="flex flex-col items-center justify-center text-white md:h-[60vh] h-screen py-15 px-4">
+        <div className="flex flex-col gap-24 items-center justify-center text-white md:h-[60vh] h-screen py-15 px-4">
             <h1
                 id="scramble"
                 className="font-bold text-center max-sm:text-[9vw] text-5xl uppercase drop-shadow-[0px_0px_8px_rgba(255,255,255,0.6)]"
